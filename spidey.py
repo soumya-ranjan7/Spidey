@@ -3,12 +3,13 @@ from bs4 import BeautifulSoup
 import random
 import urllib
 
+#function to download pictures from the links of image sources
 def download_web(url):
     name=random.randrange(1,2000)
     full=str(name)
     urllib.urlretrieve(url,full)
 
-
+#function to crawl the website and send the links of all the images to the download_web()
 def spidy():
 
     url=raw_input("Enter the url    ")
@@ -25,7 +26,7 @@ def spidy():
                  complete = "https:" + image
 
              print(complete)
-             download_web(image)
+             download_web(complete)
 
 spidy()
 
