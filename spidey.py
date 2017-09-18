@@ -18,7 +18,11 @@ def spidy():
     soup=BeautifulSoup(text,"html.parser")
     for img in soup.findAll('img'):
              image=img.get('src')
-
+             #Sometimes the links of images are incomplete.
+             #Like they dont have https:// which makes the link invalid
+             #Here we are checking if the crawled link is complete or not.
+             #if it is complete,then its cool
+             #otherwise we just add https:// to the incomplete link
              if image[0]=='h':
                  complete = image
 
