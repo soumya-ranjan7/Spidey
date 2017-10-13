@@ -5,7 +5,7 @@ import urllib
 
 #function to download pictures from the links of image sources
 def download_web(url):
-    name=random.randrange(1,2000)
+    name=random.randrange(1,1000)
     full=str(name)
     urllib.urlretrieve(url,full)
 
